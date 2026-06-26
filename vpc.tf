@@ -56,10 +56,6 @@ resource "aws_route_table" "rt_public" {
     cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.igw.id
   }
-#   route {
-  #     cidr_block             = "::/0"
-#     egress_only_gateway_id = aws_egress_only_internet_gateway.muyu.id
-#   }
 
   tags = {
     Name = "${var.prefix_name}-rt-public"
@@ -81,10 +77,6 @@ resource "aws_route_table" "rt_private" {
     cidr_block     = "0.0.0.0/0"
     nat_gateway_id = aws_nat_gateway.natgw.id
   }
-#   route {
-  #     cidr_block             = "::/0"
-#     egress_only_gateway_id = aws_egress_only_internet_gateway.muyu.id
-#   }
 
   tags = {
     Name = "${var.prefix_name}-rt-private"
