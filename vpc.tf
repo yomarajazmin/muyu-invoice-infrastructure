@@ -1,6 +1,6 @@
 # VPC resources will be defined here when network infrastructure is implemented.
 resource "aws_vpc" "muyu" {
-  cidr_block       = var.vpc_cidr
+  cidr_block = var.vpc_cidr
 
   tags = {
     Name = "${var.prefix_name}-vpc"
@@ -53,7 +53,7 @@ resource "aws_route_table" "rt_public" {
   vpc_id = aws_vpc.muyu.id
 
   route {
-    cidr_block           = "0.0.0.0/0"
+    cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.igw.id
   }
 #   route {
@@ -78,7 +78,7 @@ resource "aws_route_table" "rt_private" {
   vpc_id = aws_vpc.muyu.id
 
   route {
-    cidr_block           = "0.0.0.0/0"
+    cidr_block = "0.0.0.0/0"
     gateway_id = aws_nat_gateway.natgw.id
   }
 #   route {
