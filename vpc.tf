@@ -53,11 +53,11 @@ resource "aws_route_table" "rt_public" {
   vpc_id = aws_vpc.muyu.id
 
   route {
-    cidr_block     = "0.0.0.0/0"
+    cidr_block = "0.0.0.0/0"
     gateway_id = aws_internet_gateway.igw.id
   }
 #   route {
-#     cidr_block           = "::/0"
+  #     cidr_block             = "::/0"
 #     egress_only_gateway_id = aws_egress_only_internet_gateway.muyu.id
 #   }
 
@@ -82,7 +82,7 @@ resource "aws_route_table" "rt_private" {
     nat_gateway_id = aws_nat_gateway.natgw.id
   }
 #   route {
-#     cidr_block           = "::/0"
+  #     cidr_block             = "::/0"
 #     egress_only_gateway_id = aws_egress_only_internet_gateway.muyu.id
 #   }
 
